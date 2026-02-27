@@ -1,5 +1,5 @@
 version: 1
 interface:
   display_name: TalkToMePy TTS
-  short_description: Speak text aloud with local TalkToMePy service
-  default_prompt: Read the provided text aloud using the local TalkToMePy service.
+  short_description: Speak text aloud with local TalkToMePy v0.5+ VoiceDesign service
+  default_prompt: Read the provided text aloud using the local TalkToMePy v0.5+ VoiceDesign service.

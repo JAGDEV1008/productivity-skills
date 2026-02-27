@@ -132,13 +132,11 @@ wait_for_model_ready() {
     local status_json
     status_json="$(curl -sS "$BASE_URL/model/status" || true)"
 
-    local loaded loading ready detail load_error
+    local loaded loading ready detail
     loaded="$(json_field "$status_json" "loaded")"
     loading="$(json_field "$status_json" "loading")"
     ready="$(json_field "$status_json" "ready")"
     detail="$(json_field "$status_json" "detail")"
-    load_error="$(json_field "$status_json" "load_error")"
-
     if [[ "$loaded" == "True" || "$loaded" == "true" ]]; then
       return 0
     fi
@@ -148,14 +146,11 @@ wait_for_model_ready() {
       return 1
     fi
 
-    if [[ -n "$load_error" ]]; then
-      echo "Model load error: $load_error" >&2
-      return 1
-    fi
-
     if [[ "$loading" != "True" && "$loading" != "true" ]]; then
       # Not loaded and not loading. Try to trigger load again.
-      curl -sS -X POST "$BASE_URL/model/load" >/dev/null || true
+      curl -sS -X POST "$BASE_URL/model/load" \
+        -H "Content-Type: application/json" \
+        -d '{"mode":"voice_design","strict_load":false}' >/dev/null || true
     fi
 
     sleep "$interval"
@@ -168,7 +163,9 @@ wait_for_model_ready() {
 
 curl -fsS "$BASE_URL/health" >/dev/null
 
-LOAD_STATUS="$(curl -sS -o /tmp/talktomepy-load-response.json -w "%{http_code}" -X POST "$BASE_URL/model/load")"
+LOAD_STATUS="$(curl -sS -o /tmp/talktomepy-load-response.json -w "%{http_code}" -X POST "$BASE_URL/model/load" \
+  -H "Content-Type: application/json" \
+  -d '{"mode":"voice_design","strict_load":false}')"
 if [[ "$LOAD_STATUS" != "200" && "$LOAD_STATUS" != "202" ]]; then
   echo "Model load request failed with HTTP $LOAD_STATUS" >&2
   cat /tmp/talktomepy-load-response.json >&2 || true
@@ -202,7 +199,7 @@ fi
 SYNTH_HEADERS="$(mktemp /tmp/talktomepy-tts-headers-XXXXXX.txt)"
 attempt=1
 while (( attempt <= MAX_SYNTH_RETRIES )); do
-  HTTP_STATUS="$(curl -sS -D "$SYNTH_HEADERS" -o "$FINAL_PATH" -w "%{http_code}" -X POST "$BASE_URL/synthesize" \
+  HTTP_STATUS="$(curl -sS -D "$SYNTH_HEADERS" -o "$FINAL_PATH" -w "%{http_code}" -X POST "$BASE_URL/synthesize/voice-design" \
     -H "Content-Type: application/json" \
     -d "$JSON_PAYLOAD")"
 

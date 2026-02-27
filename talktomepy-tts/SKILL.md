@@ -1,6 +1,6 @@
 ---
 name: talktomepy-tts
-description: Use this skill when the user wants text read aloud using the local TalkToMePy TTS HTTP service. It generates WAV audio via /synthesize, saves it in the current workspace, and plays it on macOS with afplay.
+description: Use this skill when the user wants text read aloud using the local TalkToMePy v0.5+ TTS HTTP service in VoiceDesign mode. It generates WAV audio via /synthesize/voice-design, saves it in the current workspace, and plays it on macOS with afplay.
 ---
 
 # TalkToMePy TTS
@@ -9,7 +9,7 @@ Use this skill when the user asks to hear text spoken aloud from the local machi
 
 ## What this skill does
 
-- Calls the local TalkToMePy service (`/health`, `/model/load`, `/model/status`, `/synthesize`)
+- Calls the local TalkToMePy v0.5+ service (`/health`, `/model/load`, `/model/status`, `/synthesize/voice-design`)
 - Handles async model loading behavior (`/model/load` may return `202`)
 - Retries synthesis on `503` using `Retry-After`
 - Saves generated WAV output to `./tts_outputs` in the current working directory by default
@@ -25,7 +25,7 @@ Use this skill when the user asks to hear text spoken aloud from the local machi
 1. Ensure service is healthy:
    - `curl -fsS http://127.0.0.1:8000/health`
 2. Trigger model load (idempotent):
-   - `curl -sS -X POST http://127.0.0.1:8000/model/load`
+   - `curl -sS -X POST http://127.0.0.1:8000/model/load -H "Content-Type: application/json" -d '{"mode":"voice_design","strict_load":false}'`
 3. Wait for ready state via `/model/status`
 4. Synthesize + save + play using bundled script:
    - `scripts/speak_with_talktomepy.sh --text "..."`

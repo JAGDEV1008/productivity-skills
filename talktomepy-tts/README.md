@@ -63,7 +63,10 @@
 
 ## Validation Checklist
 
-- Verify `/health`, `/model/load`, and `/model/status` succeed for your configured base URL.
+- Verify `/health` succeeds for your configured base URL.
+- Verify `/model/load` succeeds using a mode-aware payload:
+  - `{"mode":"voice_design","strict_load":false}`
+- Verify `/model/status` reaches `loaded=true` for VoiceDesign mode.
 - Run one `--no-play` synthesis and confirm output file path.
 - Run one playback synthesis (if supported) and confirm audio plays correctly.
 - Confirm retry/wait env vars are honored in logs/output behavior.
@@ -72,4 +75,5 @@
 ## Notes And Compatibility
 
 - Current script expects `bash`, `curl`, and `python3`.
+- Skill targets TalkToMePy v0.5+ API contract (`/synthesize/voice-design`, mode-aware `/model/load`).
 - Playback uses `afplay` (macOS); use `--no-play` when playback is unavailable.
