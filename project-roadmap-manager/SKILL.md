@@ -96,3 +96,14 @@ Use this structure when creating a new roadmap:
 - Use ISO date format (`YYYY-MM-DD`) for all dated fields.
 - Keep edits minimal and deterministic.
 - Never leave conflicting milestone statuses across sections.
+
+## Automation Templates
+
+Use `$project-roadmap-manager` inside automation prompts so Codex consistently applies the roadmap update rules.
+
+For ready-to-fill Codex App and Codex CLI (`codex exec`) templates, including bounded-edit guardrails and placeholders, use:
+- `references/automation-prompts.md`
+
+## References
+
+- Automation prompt templates: `references/automation-prompts.md`

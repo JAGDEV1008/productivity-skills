@@ -127,6 +127,17 @@ Optional env var overrides:
 - `TALKTOMEPY_MAX_SYNTH_RETRIES`
 - `TALKTOMEPY_DEFAULT_RETRY_AFTER_SECONDS`
 
+## Automation Templates
+
+Use `$talktomepy-tts` inside automation prompts so Codex loads the service checks and synthesis guardrails in this skill.
+
+For ready-to-fill Codex App and Codex CLI (`codex exec`) templates, including unattended-safe defaults (`--no-play`) and placeholders, use:
+- `references/automation-prompts.md`
+
+## References
+
+- Automation prompt templates: `references/automation-prompts.md`
+
 If synthesis fails, surface HTTP status/body and suggest checking:
 - `/model/status`
 - launchd logs: `~/Library/Logs/talktomepy.stderr.log`

@@ -56,7 +56,15 @@ python3 scripts/build_digest.py \
 
 The script reads JSON exported from Things MCP responses and prints Markdown digest output.
 
+## Automation Templates
+
+Use `$things-week-ahead-digest` inside automation prompts so Codex reliably loads this workflow.
+
+For ready-to-fill Codex App and Codex CLI (`codex exec`) templates, including Things MCP fallback guidance, placeholders, and customization knobs, use:
+- `references/automation-prompts.md`
+
 ## References
 
 - Scoring and suggestion rules: `references/suggestion-rules.md`
 - Output shape and section template: `references/output-format.md`
+- Automation prompt templates: `references/automation-prompts.md`
