@@ -67,6 +67,14 @@ The report also includes:
 - Never write into scanned repositories.
 - Provide recommendations only.
 
+## Automation Templates
+
+Use `$workspace-cleanup-audit` inside automation prompts so Codex consistently loads this skill behavior.
+
+For ready-to-fill Codex App and Codex CLI (`codex exec`) templates, including placeholders, safety defaults, and output handling, use:
+- `references/automation-prompts.md`
+
 ## References
 
 - Pattern and threshold notes: `references/patterns.md`
+- Automation prompt templates: `references/automation-prompts.md`
