@@ -1,67 +1,97 @@
 # productivity-skills
 
-Curated Codex skills focused on productivity workflows, intended for sharing and installation via skills tooling.
+Curated Codex skills for productivity workflows, maintenance automation, and operational hygiene.
 
-## How To Add (Skills CLI)
+## What These Agent Skills Help With
 
-```bash
-npx @vercel/skills add gaelic-ghost/productivity-skills
-```
+This repository helps users and agents run recurring maintenance tasks with consistent guardrails and predictable outputs.
+
+## Skill Guide (When To Use What)
+
+- `docs-alignment-maintainer`
+  - Use when you need workspace-wide docs drift checks and bounded docs fixes.
+  - Helps by producing deterministic Markdown/JSON findings with safe remediation options.
+- `skills-readme-alignment-maintainer`
+  - Use when you need profile-aware README standards maintenance across `*-skills` repos.
+  - Helps by normalizing structure and command integrity without touching code files.
+- `project-roadmap-manager`
+  - Use when you need a canonical `ROADMAP.md` workflow for milestones and accepted plans.
+  - Helps by keeping project planning state explicit and current.
+- `workspace-cleanup-audit`
+  - Use when you need a read-only cleanup audit across workspace repos.
+  - Helps by identifying artifact buildup and cleanup priorities.
+- `things-week-ahead-digest`
+  - Use when you want weekly planning summaries from Things data.
+  - Helps by surfacing priorities and actionable next steps.
+- `talktomepy-tts`
+  - Use when you want local TalkToMePy speech output integrated into agent workflows.
+  - Helps by turning text outputs into spoken audio with repeatable command flows.
+
+## Quick Start (Vercel Skills CLI)
 
 ```bash
 npx skills add gaelic-ghost/productivity-skills
 ```
 
-CLI flags from the [`skills` package docs](https://www.npmjs.com/package/skills):
-
-- `-a, --agent <agents...>`: target specific agents (recommended here: `-a codex`)
-- `-g, --global`: install globally instead of project-local
-
-Examples:
+```bash
+npx skills add gaelic-ghost/productivity-skills -a codex
+```
 
 ```bash
-# Project-local install for Codex
-npx skills add gaelic-ghost/productivity-skills -a codex
-
-# Global install for Codex
 npx skills add gaelic-ghost/productivity-skills -a codex -g
 ```
 
-## Included skills
+## Install individually by Skill
 
-- `docs-alignment-maintainer`
-- `skills-readme-alignment-maintainer`
-- `project-roadmap-manager`
-- `workspace-cleanup-audit`
-- `things-week-ahead-digest`
-- `talktomepy-tts`
+```bash
+npx skills add gaelic-ghost/productivity-skills@docs-alignment-maintainer -a codex
+npx skills add gaelic-ghost/productivity-skills@skills-readme-alignment-maintainer -a codex
+npx skills add gaelic-ghost/productivity-skills@project-roadmap-manager -a codex
+npx skills add gaelic-ghost/productivity-skills@workspace-cleanup-audit -a codex
+npx skills add gaelic-ghost/productivity-skills@things-week-ahead-digest -a codex
+npx skills add gaelic-ghost/productivity-skills@talktomepy-tts -a codex
+```
 
-## Customization guides
+## Find Skills like these with the `skills` CLI by Vercel — [vercel-labs/skills](https://github.com/vercel-labs/skills)
 
-Most skill directories include a `README.md` with personalization points, common tuning profiles, example Codex prompts, and validation checklists.
+```bash
+npx skills find "workspace maintenance codex"
+npx skills find "readme alignment skill"
+npx skills find "productivity automation"
+```
 
-- [`project-roadmap-manager/README.md`](./project-roadmap-manager/README.md)
-- [`workspace-cleanup-audit/README.md`](./workspace-cleanup-audit/README.md)
-- [`things-week-ahead-digest/README.md`](./things-week-ahead-digest/README.md)
-- [`talktomepy-tts/README.md`](./talktomepy-tts/README.md)
+## Find Skills like these with `Find Skills` by Vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
 
-## Automation prompt templates
+```bash
+npx skills add vercel-labs/agent-skills -a codex
+npx skills find "codex automation templates"
+npx skills find "docs drift maintenance"
+```
 
-Each skill now includes `references/automation-prompts.md` with:
-- Codex App automation prompt templates
-- Codex CLI (`codex exec`) automation prompt templates
-- Suitability ratings, placeholders, guardrails, and customization points
+- Skills catalog: [skills.sh](https://skills.sh/)
 
-- [`docs-alignment-maintainer/references/automation-prompts.md`](./docs-alignment-maintainer/references/automation-prompts.md)
-- [`skills-readme-alignment-maintainer/references/automation-prompts.md`](./skills-readme-alignment-maintainer/references/automation-prompts.md)
-- [`project-roadmap-manager/references/automation-prompts.md`](./project-roadmap-manager/references/automation-prompts.md)
-- [`workspace-cleanup-audit/references/automation-prompts.md`](./workspace-cleanup-audit/references/automation-prompts.md)
-- [`things-week-ahead-digest/references/automation-prompts.md`](./things-week-ahead-digest/references/automation-prompts.md)
-- [`talktomepy-tts/references/automation-prompts.md`](./talktomepy-tts/references/automation-prompts.md)
+## Repository Layout
 
-## Source and curation
+```text
+.
+├── README.md
+├── LICENSE
+├── docs-alignment-maintainer/
+├── skills-readme-alignment-maintainer/
+├── project-roadmap-manager/
+├── workspace-cleanup-audit/
+├── things-week-ahead-digest/
+└── talktomepy-tts/
+```
 
-All skills were copied from `~/.codex/skills` using git-tracked files only.
+## Notes
+
+- Each skill includes `references/automation-prompts.md` templates for Codex App and Codex CLI automation usage.
+- `docs-alignment-maintainer` is docs-focused only; AGENTS maintenance is intentionally out-of-scope.
+
+## Search Keywords
+
+Codex skills, productivity automation, docs alignment, README alignment, workspace cleanup, roadmap maintenance, Things planning.
 
 ## License
 
