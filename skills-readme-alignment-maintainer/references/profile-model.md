@@ -9,9 +9,12 @@
 Requirements:
 
 - core README schema
+- `## Customization Workflow Matrix` required
+- `## Install individually by Skill or Skill Pack` required
+- `## Update Skills` required
 - discoverability sections
 - release highlights/history section(s)
-- search keywords section
+- `## Keywords` section
 
 ## Private/Internal
 

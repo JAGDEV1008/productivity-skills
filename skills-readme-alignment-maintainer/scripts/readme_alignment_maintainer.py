@@ -21,44 +21,58 @@ BOOTSTRAP_REPOS = {"a11y-skills"}
 
 EXPECTED_OWNER = "gaelic-ghost"
 
-CORE_SECTION_KEYS = ["what", "guide", "quickstart", "individual", "update_skills", "more_resources", "layout", "notes", "license"]
+CORE_SECTION_KEYS = [
+    "what",
+    "guide",
+    "customization_matrix",
+    "quickstart",
+    "individual",
+    "update_skills",
+    "more_resources",
+    "layout",
+    "notes",
+    "keywords",
+    "license",
+]
 
 SECTION_CANONICAL_HEADINGS = {
     "what": "What These Agent Skills Help With",
     "guide": "Skill Guide (When To Use What)",
+    "customization_matrix": "Customization Workflow Matrix",
     "quickstart": "Quick Start (Vercel Skills CLI)",
-    "individual": "Install individually by Skill",
+    "individual": "Install individually by Skill or Skill Pack",
     "update_skills": "Update Skills",
     "more_resources": "More resources for similar Skills",
     "layout": "Repository Layout",
     "notes": "Notes",
     "license": "License",
-    "keywords": "Search Keywords",
+    "keywords": "Keywords",
 }
 
 SECTION_PATTERNS = {
     "what": r"^##\s+What These Agent Skills Help With\s*$",
     "guide": r"^##\s+Skill Guide \(When To Use What\)\s*$",
+    "customization_matrix": r"^##\s+Customization Workflow Matrix\s*$",
     "quickstart": r"^##\s+Quick Start \(Vercel Skills CLI\)\s*$",
-    "individual": r"^##\s+Install individually by Skill\s*$",
+    "individual": r"^##\s+Install individually by Skill or Skill Pack\s*$",
     "update_skills": r"^##\s+Update Skills\s*$",
     "more_resources": r"^##\s+More resources for similar Skills\s*$",
     "layout": r"^##\s+Repository Layout\s*$",
     "notes": r"^##\s+Notes\s*$",
     "license": r"^##\s+License\s*$",
-    "keywords": r"^##\s+Search Keywords\s*$",
+    "keywords": r"^##\s+Keywords\s*$",
 }
 
 MORE_RESOURCES_SUBSECTION_KEYS = ["find_cli", "find_skill"]
 
 MORE_RESOURCES_SUBSECTION_CANONICAL_HEADINGS = {
     "find_cli": "Find Skills like these with the `skills` CLI by Vercel — [vercel-labs/skills](https://github.com/vercel-labs/skills)",
-    "find_skill": "Find Skills like these with the `Find Skills` Skill by Vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)",
+    "find_skill": "Find Skills like these with the `Find Skills` Agent Skill by Vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)",
 }
 
 MORE_RESOURCES_SUBSECTION_PATTERNS = {
     "find_cli": r"^###\s+Find Skills like these with.*`?skills`?\s+CLI",
-    "find_skill": r"^###\s+Find Skills like these with.*`?Find Skills`?",
+    "find_skill": r"^###\s+Find Skills like these with.*`?Find Skills`?.*(?:Agent\s+Skill|Skill)",
 }
 
 MORE_RESOURCES_SUBSECTION_TEMPLATES = {
@@ -89,37 +103,53 @@ HEADING_ALIASES = {
     "how to add (vercel skills cli)": "quickstart",
     "how to add with skills cli": "quickstart",
     "quickstart (skills cli)": "quickstart",
+    "customization workflow matrix": "customization_matrix",
     "included skills": "guide",
     "included skill": "guide",
     "skills included": "guide",
     "install by skill": "individual",
+    "install individually by skill": "individual",
     "install individually by skills": "individual",
+    "install individually by skill or skill pack": "individual",
+    "search keywords": "keywords",
+    "keywords": "keywords",
     "update skills": "update_skills",
     "more resources for similar skills": "more_resources",
 }
 
 HIGH_CONFIDENCE_HEADING_PATTERNS = [
+    ("customization_matrix", re.compile(r"^customization\s+workflow\s+matrix$", re.IGNORECASE)),
     ("quickstart", re.compile(r"^quick\s*start.*skills\s*cli$", re.IGNORECASE)),
     ("quickstart", re.compile(r"^how\s+to\s+add.*skills\s*cli$", re.IGNORECASE)),
+    ("individual", re.compile(r"^install\s+(?:individually|individual)\s+by\s+skill\s+or\s+skill\s+pack$", re.IGNORECASE)),
     ("individual", re.compile(r"^install\s+(?:individually|individual)\s+by\s+skills?$", re.IGNORECASE)),
     ("individual", re.compile(r"^install\s+by\s+skills?$", re.IGNORECASE)),
+    ("keywords", re.compile(r"^(?:search\s+)?keywords$", re.IGNORECASE)),
     ("update_skills", re.compile(r"^update\s+skills$", re.IGNORECASE)),
     ("guide", re.compile(r"^included\s+skills?$", re.IGNORECASE)),
     ("more_resources", re.compile(r"^more\s+resources.*similar\s+skills$", re.IGNORECASE)),
 ]
 
 MORE_RESOURCES_SUBSECTION_ALIASES = {
+    "find skills like these with find skills agent skill by vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)": "find_skill",
+    "find skills like these with find skills skill by vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)": "find_skill",
     "find skills like these with the find skills by vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)": "find_skill",
 }
 
 MORE_RESOURCES_SUBSECTION_HIGH_CONFIDENCE_PATTERNS = [
     ("find_cli", re.compile(r"^find\s+skills?.*skills\s*cli.*$", re.IGNORECASE)),
-    ("find_skill", re.compile(r"^find\s+skills?.*find\s+skills.*$", re.IGNORECASE)),
+    ("find_skill", re.compile(r"^find\s+skills?.*find\s+skills.*(?:agent\s+skill|skill).*$", re.IGNORECASE)),
 ]
 
 SECTION_TEMPLATES = {
     "what": "## What These Agent Skills Help With\n\nDescribe the audience and the workflows this repository improves.\n",
     "guide": "## Skill Guide (When To Use What)\n\n- `<skill-name>`\n  - Use when ...\n  - Helps by ...\n",
+    "customization_matrix": (
+        "## Customization Workflow Matrix\n\n"
+        "| Skill | Chat Customization Flow (SKILL.md) | Durable Config (`template` + persisted `customization.yaml`) | Automation Knobs | README Migration Status |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| `<skill-name>` | Yes | Yes | No | README removed |\n"
+    ),
     "quickstart": (
         "## Quick Start (Vercel Skills CLI)\n\n"
         "Use the Vercel `skills` CLI against this repository to install any skill directory you want to use. "
@@ -137,7 +167,7 @@ SECTION_TEMPLATES = {
         "```\n"
     ),
     "individual": (
-        "## Install individually by Skill\n\n"
+        "## Install individually by Skill or Skill Pack\n\n"
         "```bash\n"
         "npx skills add gaelic-ghost/{repo} --skill <skill-name>\n"
         "```\n"
@@ -160,7 +190,7 @@ SECTION_TEMPLATES = {
         "npx skills find \"swift package workflow\"\n"
         "npx skills find \"dash docset apple docs\"\n"
         "```\n\n"
-        "### Find Skills like these with the `Find Skills` Skill by Vercel — "
+        "### Find Skills like these with the `Find Skills` Agent Skill by Vercel — "
         "[vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)\n\n"
         "```bash\n"
         "# `Find Skills` is a part of Vercel's `agent-skills` repo\n"
@@ -173,7 +203,7 @@ SECTION_TEMPLATES = {
     "layout": "## Repository Layout\n\n```text\n.\n├── README.md\n└── <skill-directories>/\n```\n",
     "notes": "## Notes\n\n- Keep README commands and skill inventory synchronized.\n",
     "license": "## License\n\nSee [LICENSE](./LICENSE).\n",
-    "keywords": "## Search Keywords\n\nCodex skills, automation, workflows, documentation alignment.\n",
+    "keywords": "## Keywords\n\nCodex skills, automation, workflows, documentation alignment.\n",
 }
 
 
@@ -337,8 +367,20 @@ def canonical_heading_line(section_key: str) -> str:
 
 def expected_section_keys(profile: str) -> List[str]:
     if profile == "public-curated":
-        # Public READMEs place search keywords before final license details.
-        return ["what", "guide", "quickstart", "individual", "update_skills", "more_resources", "layout", "notes", "keywords", "license"]
+        # Public READMEs include customization matrix and place keywords before license.
+        return [
+            "what",
+            "guide",
+            "customization_matrix",
+            "quickstart",
+            "individual",
+            "update_skills",
+            "more_resources",
+            "layout",
+            "notes",
+            "keywords",
+            "license",
+        ]
     return list(CORE_SECTION_KEYS)
 
 
@@ -1029,13 +1071,19 @@ def make_bootstrap_readme(repo: Path, skill_dirs: List[str]) -> str:
         f"npx skills add {EXPECTED_OWNER}/{repo.name} --all",
         "```",
         "",
-        "## Install individually by Skill",
+        "## Install individually by Skill or Skill Pack",
         "",
     ])
     for skill in skill_dirs:
         lines.extend(["```bash", f"npx skills add {EXPECTED_OWNER}/{repo.name} --skill {skill}", "```", ""])
 
     lines.extend([
+        "## Customization Workflow Matrix",
+        "",
+        "| Skill | Chat Customization Flow (SKILL.md) | Durable Config (`template` + persisted `customization.yaml`) | Automation Knobs | README Migration Status |",
+        "| --- | --- | --- | --- | --- |",
+        "| `<skill-name>` | Yes | Yes | No | README removed |",
+        "",
         "## Update Skills",
         "",
         "```bash",
@@ -1058,7 +1106,7 @@ def make_bootstrap_readme(repo: Path, skill_dirs: List[str]) -> str:
         "npx skills find \"readability workflow\"",
         "```",
         "",
-        "### Find Skills like these with the `Find Skills` Skill by Vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)",
+        "### Find Skills like these with the `Find Skills` Agent Skill by Vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)",
         "",
         "```bash",
         "# `Find Skills` is a part of Vercel's `agent-skills` repo",
@@ -1082,6 +1130,10 @@ def make_bootstrap_readme(repo: Path, skill_dirs: List[str]) -> str:
         "## Notes",
         "",
         "- Keep README commands aligned with available skills.",
+        "",
+        "## Keywords",
+        "",
+        "Codex skills, accessibility automation, speech workflows, documentation alignment.",
         "",
         "## License",
         "",
@@ -1328,6 +1380,13 @@ def dedupe_skills_add_lines(text: str) -> Tuple[str, int]:
     removed = 0
 
     for line in text.splitlines():
+        # Preserve multi-line shell commands. A trailing "\" indicates the line is
+        # intentionally continued on the next line and should not be deduplicated
+        # independently from the full command block.
+        if line.rstrip().endswith("\\"):
+            out_lines.append(line)
+            continue
+
         parsed = parse_skills_add_command_line(line)
         if parsed is not None:
             dedupe_key = parsed.normalized_line

@@ -30,7 +30,7 @@ Pass runtime inputs from the calling prompt:
 Audit only:
 
 ```bash
-python3 scripts/readme_alignment_maintainer.py \
+uv run python scripts/readme_alignment_maintainer.py \
   --workspace ~/Workspace \
   --repo-glob '*-skills' \
   --print-md \
@@ -40,7 +40,7 @@ python3 scripts/readme_alignment_maintainer.py \
 Audit and bounded fixes:
 
 ```bash
-python3 scripts/readme_alignment_maintainer.py \
+uv run python scripts/readme_alignment_maintainer.py \
   --workspace ~/Workspace \
   --repo-glob '*-skills' \
   --apply-fixes \
@@ -51,7 +51,7 @@ python3 scripts/readme_alignment_maintainer.py \
 Fail when unresolved issues remain:
 
 ```bash
-python3 scripts/readme_alignment_maintainer.py \
+uv run python scripts/readme_alignment_maintainer.py \
   --workspace ~/Workspace \
   --repo-glob '*-skills' \
   --apply-fixes \
@@ -70,7 +70,7 @@ python3 scripts/readme_alignment_maintainer.py \
 
 Use `references/profile-model.md`:
 
-- public curated repos: enforce full schema including `## Update Skills` plus wrapped discoverability sections (`## More resources for similar Skills` with required nested `###` subsections)
+- public curated repos: enforce full schema including `## Customization Workflow Matrix`, `## Install individually by Skill or Skill Pack`, `## Update Skills`, wrapped discoverability sections (`## More resources for similar Skills` with required nested `###` subsections), and `## Keywords`
 - private/internal repos: keep concise, omit growth-only sections
 - bootstrap repos: allow initial README creation with minimal complete structure
 
