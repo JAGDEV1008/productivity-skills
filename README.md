@@ -29,26 +29,29 @@ This repository helps users and agents run recurring maintenance tasks with cons
 
 ## Quick Start (Vercel Skills CLI)
 
+Use the Vercel `skills` CLI against this repository to install any skill directory you want to use. Or install them all conveniently with one command.
+
 ```bash
+# Install your choice of skill(s) via the Vercel `skills` CLI
+# Using `npx` fetches `skills` without installing it on your machine
 npx skills add gaelic-ghost/productivity-skills
 ```
 
-```bash
-npx skills add gaelic-ghost/productivity-skills -a codex
-```
-
-```bash
-npx skills add gaelic-ghost/productivity-skills -a codex -g
-```
+The CLI will prompt you to choose which skill(s) to install from this repo.
 
 ## Install individually by Skill
 
 ```bash
-npx skills add gaelic-ghost/productivity-skills@docs-alignment-maintainer -a codex
-npx skills add gaelic-ghost/productivity-skills@skills-readme-alignment-maintainer -a codex
-npx skills add gaelic-ghost/productivity-skills@project-roadmap-manager -a codex
-npx skills add gaelic-ghost/productivity-skills@workspace-cleanup-audit -a codex
-npx skills add gaelic-ghost/productivity-skills@things-week-ahead-digest -a codex
+
+npx skills add gaelic-ghost/productivity-skills@docs-alignment-maintainer
+
+npx skills add gaelic-ghost/productivity-skills@skills-readme-alignment-maintainer
+
+npx skills add gaelic-ghost/productivity-skills@project-roadmap-manager
+
+npx skills add gaelic-ghost/productivity-skills@workspace-cleanup-audit
+
+npx skills add gaelic-ghost/productivity-skills@things-week-ahead-digest
 ```
 
 ## Find Skills like these with the `skills` CLI by Vercel — [vercel-labs/skills](https://github.com/vercel-labs/skills)
