@@ -45,7 +45,7 @@ SECTION_TEMPLATES = {
         "npx skills add gaelic-ghost/{repo}\n"
         "```\n"
     ),
-    "individual": "## Install individually by Skill\n\nAdd one `npx skills add <owner/repo@skill> -a codex` command per skill.\n",
+    "individual": "## Install individually by Skill\n\nAdd one `npx skills add <owner/repo@skill>` command per skill.\n",
     "find_cli": (
         "## Find Skills like these with the `skills` CLI by Vercel — "
         "[vercel-labs/skills](https://github.com/vercel-labs/skills)\n\n"
@@ -59,7 +59,7 @@ SECTION_TEMPLATES = {
         "## Find Skills like these with `Find Skills` by Vercel — "
         "[vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)\n\n"
         "```bash\n"
-        "npx skills add vercel-labs/agent-skills -a codex\n"
+        "npx skills add vercel-labs/agent-skills\n"
         "npx skills find \"skills repository hygiene\"\n"
         "```\n\n"
         "- Skills catalog: https://skills.sh/\n"
@@ -439,7 +439,7 @@ def make_bootstrap_readme(repo: Path, skill_dirs: List[str]) -> str:
         "",
     ])
     for skill in skill_dirs:
-        lines.extend(["```bash", f"npx skills add {EXPECTED_OWNER}/{repo.name}@{skill} -a codex", "```", ""])
+        lines.extend(["```bash", f"npx skills add {EXPECTED_OWNER}/{repo.name}@{skill}", "```", ""])
 
     lines.extend([
         "## Find Skills like these with the `skills` CLI by Vercel — [vercel-labs/skills](https://github.com/vercel-labs/skills)",
