@@ -41,6 +41,25 @@ Use the Vercel `skills` CLI to install from this repository.
 npx skills add gaelic-ghost/productivity-skills
 ```
 
+## Upgrade Note for v2.0.0
+
+`v2.0.0` is a breaking release.
+
+- Removed skill surfaces:
+  - `project-skills-orchestrator-agent`
+  - `project-roadmap-maintainer`
+- Use direct standalone skill installs instead of orchestrator-first flows.
+- For roadmap maintenance, use `project-docs-maintainer` with `mode=roadmap_maintenance`.
+
+Canonical installs:
+
+```bash
+npx skills add gaelic-ghost/productivity-skills --skill project-docs-maintainer
+npx skills add gaelic-ghost/productivity-skills --skill project-workspace-cleaner
+npx skills add gaelic-ghost/productivity-skills --skill things-reminders-manager
+npx skills add gaelic-ghost/productivity-skills --skill things-digest-generator
+```
+
 Install all skills from this repository:
 
 ```bash
