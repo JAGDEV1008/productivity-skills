@@ -19,12 +19,10 @@ For standards and applicability guidance, see [AGENTS.md](./AGENTS.md).
 
 ## What These Agent Skills Help With
 
-This repository packages reusable Codex skills for canonical docs maintenance, skill routing, read-only workspace hygiene, and Things planning/reminder workflows.
+This repository packages reusable Codex skills for canonical docs maintenance, read-only workspace hygiene, and Things planning/reminder workflows.
 
 ## Skill Guide (When To Use What)
 
-- `project-skills-orchestrator-agent`
-  - Front-door router that selects the right canonical skill and prints exact install commands for missing skills.
 - `project-docs-maintainer`
   - Canonical maintainer for `*-skills` README drift and checklist roadmap maintenance through explicit modes.
 - `project-workspace-cleaner`
@@ -48,16 +46,9 @@ Use the Vercel `skills` CLI to install from this repository.
 npx skills add gaelic-ghost/productivity-skills
 ```
 
-Install the orchestrator first:
+Install all skills from this repository:
 
 ```bash
-npx skills add gaelic-ghost/productivity-skills --skill project-skills-orchestrator-agent
-```
-
-Then ask your agent to route your request and suggest any missing installs.
-
-```bash
-# Install all skills from this repository
 npx skills add gaelic-ghost/productivity-skills --all
 ```
 
@@ -86,8 +77,8 @@ npx skills update
 ### Find Skills like these with the `skills` CLI by Vercel — [vercel-labs/skills](https://github.com/vercel-labs/skills)
 
 ```bash
-npx skills find "skills orchestration"
 npx skills find "skills readme maintenance"
+npx skills find "workspace cleanup automation"
 npx skills find "things productivity automation"
 ```
 
@@ -114,7 +105,6 @@ Then ask your Agent for help finding a skill for "" or ""
 │   └── maintainers/
 ├── project-docs-maintainer/
 ├── project-roadmap-maintainer/
-├── project-skills-orchestrator-agent/
 ├── project-workspace-cleaner/
 ├── things-digest-generator/
 └── things-reminders-manager/
@@ -124,11 +114,10 @@ Then ask your Agent for help finding a skill for "" or ""
 
 - Install and use skills individually; do not assume access to repo-level maintainer docs.
 - Prefer canonical skills over compatibility shims for new prompts.
-- Use `project-skills-orchestrator-agent` as the front door when you want routing help.
 
 ## Keywords
 
-Codex skills, skills orchestration, skills README maintenance, roadmap maintenance, workspace cleanup, Things reminders, Things digest, productivity automation.
+Codex skills, skills README maintenance, roadmap maintenance, workspace cleanup, Things reminders, Things digest, productivity automation.
 
 ## License
 

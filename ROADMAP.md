@@ -2,7 +2,7 @@
 
 ## Vision
 
-Maintain a focused set of reusable productivity skills with clear naming, deterministic workflows, and lightweight composition for installation and routing.
+Maintain a focused set of reusable productivity skills with clear naming, deterministic workflows, and direct standalone install surfaces.
 
 ## Product principles
 
@@ -13,8 +13,9 @@ Maintain a focused set of reusable productivity skills with clear naming, determ
 ## Milestone Progress
 
 - [x] Milestone 0: Naming and structural refactor (completed)
-- [x] Milestone 1: Docs skill consolidation and orchestrator addition (completed)
+- [x] Milestone 1: Docs skill consolidation and canonical maintenance entrypoints (completed)
 - [x] Milestone 2: Validation hardening and maintainer-doc cleanup (completed)
+- [x] Milestone 3: Standalone top-level skill recentering (completed)
 
 ## Milestone 0: Naming and structural refactor
 
@@ -35,23 +36,23 @@ Exit criteria:
 - [x] Active skill folder names and frontmatter names match.
 - [x] Deprecated names are absent from active invocation references.
 
-## Milestone 1: Docs consolidation and orchestration
+## Milestone 1: Docs consolidation and canonical entrypoints
 
 Scope:
 
 - Consolidate docs maintenance skills into a single maintained entrypoint.
-- Add a front-door orchestrator skill for routing and install guidance.
+- Keep installation and invocation centered on canonical standalone skills.
 
 Tickets:
 
 - [x] Merge prior docs-maintenance skills into `project-docs-maintainer`.
 - [x] Preserve both audit modes in the merged docs skill.
-- [x] Add `project-skills-orchestrator-agent` with deterministic response sections.
+- [x] Keep roadmap maintenance under `project-docs-maintainer` through explicit modes.
 
 Exit criteria:
 
 - [x] Docs maintenance behavior remains available via explicit modes.
-- [x] Orchestrator emits exact install commands and never auto-installs.
+- [x] Canonical skills are directly installable and independently understandable.
 
 ## Milestone 2: Validation hardening and maintainer-doc cleanup
 
@@ -74,6 +75,24 @@ Exit criteria:
 - [x] Maintainer guidance is reduced to the durable operating set.
 - [x] Canonical roadmap ownership is documented under `project-docs-maintainer`.
 
+## Milestone 3: Standalone top-level skill recentering
+
+Scope:
+
+- Remove the repo-level routing surface.
+- Recenter docs and install guidance on direct skill invocation.
+
+Tickets:
+
+- [x] Remove the retired routing skill from the active inventory.
+- [x] Rewrite public install guidance around standalone top-level skills.
+- [x] Remove router-specific maintainer workflow documentation.
+
+Exit criteria:
+
+- [x] Active repo docs present only standalone skill entrypoints.
+- [x] Maintainer docs describe the current post-router skill inventory.
+
 ## Risks and mitigations
 
 - Risk: Users still invoke deprecated names.
@@ -84,4 +103,4 @@ Exit criteria:
 ## Backlog candidates
 
 - Add lightweight validation tooling for SKILL/frontmatter/openai.yaml alignment.
-- Add orchestrator examples for multi-skill composition workflows.
+- Add validation checks for README layout and skill inventory consistency.

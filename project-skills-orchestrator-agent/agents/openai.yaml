@@ -1,4 +1,0 @@
-interface:
-  display_name: "Project Skills Orchestrator Agent"
-  short_description: "Route requests to the right canonical skill and provide install guidance."
-  default_prompt: "Use $project-skills-orchestrator-agent to choose exactly one canonical skill by default, compose only for explicit planning-plus-mutation or audit-plus-follow-up requests, and return `Selected Skill`, `Why`, `Install (if needed)`, and `Next Prompt` with exact install commands only when required."

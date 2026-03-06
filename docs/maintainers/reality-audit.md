@@ -40,8 +40,6 @@ If two layers disagree, fix the lower-trust layer or narrow its claims.
   - Redirect-only compatibility surface
   - Metadata: `agents/openai.yaml`
   - Runtime docs: `SKILL.md`, `references/*`
-- `project-skills-orchestrator-agent`
-  - Metadata-only routing skill with `references/skill-routing-matrix.md`
 - `project-workspace-cleaner`
   - Script: `scripts/scan_workspace_cleanup.py`
   - Metadata: `agents/openai.yaml`
