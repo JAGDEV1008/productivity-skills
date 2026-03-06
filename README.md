@@ -1,6 +1,6 @@
 # productivity-skills
 
-Curated Codex skills for productivity workflows, maintenance automation, and operational hygiene.
+Curated Codex skills for productivity workflows, maintenance automation, operational hygiene, and reusable speech-output tasks.
 
 For standards and applicability guidance, see [AGENTS.md](./AGENTS.md).
 
@@ -19,7 +19,7 @@ For standards and applicability guidance, see [AGENTS.md](./AGENTS.md).
 
 ## What These Agent Skills Help With
 
-This repository packages reusable Codex skills for canonical docs maintenance, read-only workspace hygiene, and Things planning/reminder workflows.
+This repository packages reusable Codex skills for canonical docs maintenance, read-only workspace hygiene, Things planning/reminder workflows, and profile-aware speech generation for narrated work.
 
 ## Skill Guide (When To Use What)
 
@@ -31,6 +31,8 @@ This repository packages reusable Codex skills for canonical docs maintenance, r
   - Deterministic Things reminder create/update workflow with duplicate and date safeguards.
 - `things-digest-generator`
   - Weekly Things digest generator with prioritized next-step suggestions.
+- `speak-with-profile`
+  - Profile-aware speech workflow for narrated notes, spoken drafts, audio summaries, accessibility reads, and deterministic local speech runs.
 
 ## Quick Start (Vercel Skills CLI)
 
@@ -58,6 +60,7 @@ npx skills add gaelic-ghost/productivity-skills --skill project-docs-maintainer
 npx skills add gaelic-ghost/productivity-skills --skill project-workspace-cleaner
 npx skills add gaelic-ghost/productivity-skills --skill things-reminders-manager
 npx skills add gaelic-ghost/productivity-skills --skill things-digest-generator
+npx skills add gaelic-ghost/productivity-skills --skill speak-with-profile
 ```
 
 Install all skills from this repository:
@@ -73,6 +76,7 @@ npx skills add gaelic-ghost/productivity-skills --skill project-docs-maintainer
 npx skills add gaelic-ghost/productivity-skills --skill project-workspace-cleaner
 npx skills add gaelic-ghost/productivity-skills --skill things-reminders-manager
 npx skills add gaelic-ghost/productivity-skills --skill things-digest-generator
+npx skills add gaelic-ghost/productivity-skills --skill speak-with-profile
 ```
 
 ## Update Skills
@@ -90,6 +94,7 @@ npx skills update
 npx skills find "skills readme maintenance"
 npx skills find "workspace cleanup automation"
 npx skills find "things productivity automation"
+npx skills find "text to speech workflow"
 ```
 
 ### Find Skills like these with the `Find Skills` Agent Skill by Vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
@@ -115,6 +120,7 @@ Then ask your Agent for help finding a skill for "" or ""
 │   └── maintainers/
 ├── project-docs-maintainer/
 ├── project-workspace-cleaner/
+├── speak-with-profile/
 ├── things-digest-generator/
 └── things-reminders-manager/
 ```
@@ -123,10 +129,11 @@ Then ask your Agent for help finding a skill for "" or ""
 
 - Install and use skills individually; do not assume access to repo-level maintainer docs.
 - Prefer canonical skills over compatibility shims for new prompts.
+- `speak-with-profile` is the canonical speech workflow in this repository; prefer it over direct speech calls when profile resolution or manifest reporting matters.
 
 ## Keywords
 
-Codex skills, skills README maintenance, roadmap maintenance, workspace cleanup, Things reminders, Things digest, productivity automation.
+Codex skills, skills README maintenance, roadmap maintenance, workspace cleanup, Things reminders, Things digest, productivity automation, text-to-speech, audio summaries, narrated notes.
 
 ## License
 

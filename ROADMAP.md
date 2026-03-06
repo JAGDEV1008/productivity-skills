@@ -2,7 +2,7 @@
 
 ## Vision
 
-Maintain a focused set of reusable productivity skills with clear naming, deterministic workflows, and direct standalone install surfaces.
+Maintain a focused set of reusable productivity skills with clear naming, deterministic workflows, direct standalone install surfaces, and cross-cutting speech output where audio delivery improves productivity.
 
 ## Product principles
 
@@ -16,6 +16,7 @@ Maintain a focused set of reusable productivity skills with clear naming, determ
 - [x] Milestone 1: Docs skill consolidation and canonical maintenance entrypoints (completed)
 - [x] Milestone 2: Validation hardening and maintainer-doc cleanup (completed)
 - [x] Milestone 3: Standalone top-level skill recentering (completed)
+- [x] Milestone 4: Speech workflow expansion (completed)
 
 ## Milestone 0: Naming and structural refactor
 
@@ -93,6 +94,26 @@ Exit criteria:
 - [x] Active repo docs present only standalone skill entrypoints.
 - [x] Maintainer docs describe the current post-router skill inventory.
 - [x] Roadmap maintenance is presented only through the canonical docs-maintainer entrypoint.
+
+## Milestone 4: Speech workflow expansion
+
+Scope:
+
+- Add a canonical speech workflow that fits the repo's standalone skill model.
+- Keep repo messaging centered on productivity workflows while broadening the inventory to include audio-output use cases.
+
+Tickets:
+
+- [x] Migrate `speak-with-profile` into this repository as a standalone top-level skill.
+- [x] Reframe the moved skill around narrated notes, spoken drafts, audio summaries, and hands-free review.
+- [x] Keep profile-based accessibility options and disclosure policy as part of the canonical speech workflow.
+- [x] Update public install guidance and repo inventory to include the new speech skill.
+
+Exit criteria:
+
+- [x] `speak-with-profile` is listed alongside the other standalone skills in repo docs.
+- [x] The moved skill metadata and runtime docs describe a productivity-first speech workflow.
+- [x] Repo-level docs no longer imply that productivity workflows exclude speech-output tasks.
 
 ## Risks and mitigations
 
