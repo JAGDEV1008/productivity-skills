@@ -7,8 +7,10 @@
 
 ## Standards and Guidance
 
-Always consult these resources when creating, updating, reviewing, or sharing skills:
+Consult these resources when creating, updating, reviewing, or sharing skills:
 
+- Agent Skills Standard: [agentskills.io/home](https://agentskills.io/home)
+- Vercel KB Guidance: [vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context)
 - Skill Creator workflow: [$skill-creator](/Users/galew/.codex/skills/.system/skill-creator/SKILL.md)
 - OpenAI Codex Skills: [developers.openai.com/codex/skills](https://developers.openai.com/codex/skills)
 - OpenAI Codex AGENTS.md configuration: [developers.openai.com/codex/configuration/agents-md](https://developers.openai.com/codex/configuration/agents-md)
@@ -17,21 +19,59 @@ Always consult these resources when creating, updating, reviewing, or sharing sk
 - Anthropic Agent Skills Best Practices: [platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 - Claude Code Plugins: [code.claude.com/docs/en/plugins](https://code.claude.com/docs/en/plugins)
 - The Complete Guide to Building Skill for Claude (PDF): [resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf)
-- Agent Skills Standard: [agentskills.io/home](https://agentskills.io/home)
-- Vercel KB Guidance: [vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context)
 
 Applicability guidance:
 
 - Always consult Skill Creator workflow for skill lifecycle work.
+- Always consult Agent Skills Standard and Vercel guidance for cross-platform standards alignment.
 - Consult OpenAI Codex docs when behavior is OpenAI/Codex specific.
 - Consult Claude docs when behavior is Claude skills/plugins specific.
-- Consult Agent Skills Standard and Vercel guidance for cross-platform standards alignment.
+
+## Anatomy of an Agent Skill
+
+The structure of a Skill, including purposes of each component:
+
+### `SKILL.md`
+
+The primary file for an Agent Skill, containing YAML Frontmatter and Markdown content.
+
+#### YAML Frontmatter
+
+Required fields:
+
+- `name`: Lowercase letters/numbers with single hyphens. Must match name of parent directory. Should be clear, concise, and consistent with neighboring skills. Default to `<category>-<domain>-<purpose>` format.
+- `description`: Used as trigger to activate skill. Should say what the skill does, and say when to use it.
+
+Option, recommended fields:
+
+- `license`: match to license in repo.
+- `compatibility`: use in cases of hard environmental requirements.
+- `metadata`: arbitrary k/v, good for semver and other info.
+- `allowed-tools`: experimental, support varies across the ecosystem.
+
+#### Skill Body (Markdown)
+
+The Markdown body has no required format, but if you want reliability, use a predictable structure:
+
+- What this skill does
+- When to use it (and when not to)
+- Inputs needed
+- Step-by-step procedure
+- Validation / “how to know we’re done”
+- Common failure modes and fixes
+
+### Additional Directories
+
+- `scripts/`: For executable helpers. Useful in supporting deterministic, repeatable, automatable steps in workflows.
+- `references/`: For longer documentation, checklists, templates, etc.
+- `assets/`: For static templates, output templates, sample configs, diagrams, etc.
 
 ## Repo-local Passive Standards
 
 - Prefer `uv run` for Python command execution in examples and scripts.
 - Keep skill instructions deterministic, concise, and safety-forward.
-- Never auto-commit or auto-install; report required commands and wait for user confirmation.
+- Implement all applicable YAML fields in the Frontmatter.
+- Never auto-install skills; report required commands and wait for user confirmation.
 - Keep skill runtime resources inside the skill directory: `SKILL.md`, `agents/openai.yaml`, `references/`, `config/`, and `scripts/`.
 - Do not make installed skills depend on repo-level docs under `docs/`.
 - Repo-maintainer docs live under `docs/maintainers/`.
